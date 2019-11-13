@@ -1,4 +1,4 @@
-package bridge
+package main
 
 import "fmt"
 
@@ -7,8 +7,13 @@ import "fmt"
 // #include <junk.h>
 import "C"
 
+//Run exported c code
 func Run() {
-  fmt.Printf("Invoking c library...\n")
-  C.x(10)
-  fmt.Printf("Done\n")
+	fmt.Printf("Invoking c library...\n")
+	C.x(10)
+	fmt.Printf("Done\n")
+}
+
+func main() {
+	Run()
 }
