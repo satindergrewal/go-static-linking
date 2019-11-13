@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/big"
 )
 
 // #cgo CFLAGS: -I/Users/satinder/repositories/jl777/libnspv/include -I/Users/satinder/repositories/jl777/libnspv/src/tools/cryptoconditions/include
@@ -41,9 +40,9 @@ import "C"
 //Run exported c code
 func Run() {
 	fmt.Printf("Invoking c library...\n")
-	x := new(big.Int).SetBytes("satinder")
 	cs := C.CString("satinder")
-	C.btc_base58_encode_check(x, x.BitLen(), cs, 10)
+	fmt.Println(cs)
+	//C.btc_base58_encode_check(x, x.BitLen(), cs, 10)
 	fmt.Printf("Done\n")
 }
 
